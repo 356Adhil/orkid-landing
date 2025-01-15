@@ -2,20 +2,131 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  /* Base body styles */
+  body {
+    @apply bg-neutral-50 font-sans text-neutral-800;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Headings with Fredoka font */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-bold;
+  }
+
+  /* Specific heading sizes and styles */
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight mb-6;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl leading-snug mb-4;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl leading-snug mb-4;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl leading-snug mb-3;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl leading-snug mb-2;
+  }
+
+  h6 {
+    @apply text-lg leading-snug mb-2;
+  }
+
+  /* Paragraph styles with Poppins font */
+  p {
+    @apply font-sans text-base md:text-lg leading-relaxed mb-6 text-neutral-600;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom utilities */
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+}
+
+/* Custom animation for kid-friendly elements */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@layer components {
+  .container-padded {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Kid-friendly button styles */
+  .btn {
+    @apply font-display rounded-full px-6 py-3 text-center font-semibold 
+           transition-all duration-200 transform hover:scale-105 
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  /* Fun animation class */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Card styles for kid-friendly content */
+  .kid-card {
+    @apply bg-white rounded-2xl shadow-lg p-6 
+           transition-transform duration-300 hover:-translate-y-1 
+           border-2 border-neutral-100;
+  }
+
+  /* Section titles with playful style */
+  .section-title {
+    @apply font-display text-3xl md:text-4xl font-bold text-center 
+           mb-8 text-gradient;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+
+  .hero-curve {
+    filter: drop-shadow(0 -4px 4px rgba(0, 0, 0, 0.1));
+    transform: translateY(1px);
+  }
+
+  .btn {
+    @apply rounded-full font-display transition-all duration-200 
+           shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 
+           focus:ring-offset-2 focus:ring-offset-transparent;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
