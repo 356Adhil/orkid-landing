@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="relative">
       {/* Top Curved Border */}
-      <div className="absolute top-0 left-0 right-0 h-16 bg-green-50">
+      <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-br from-green-50 to-blue-50">
         <svg
           viewBox="0 0 1440 100"
           className="absolute bottom-0 w-full h-16"
@@ -13,12 +13,12 @@ const Footer = () => {
         >
           <path
             d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z"
-            className="fill-green-100"
+            className="fill-green-200"
           />
         </svg>
       </div>
 
-      <div className="bg-green-100 pt-20 pb-8">
+      <div className="bg-green-200 pt-20 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Grid */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
