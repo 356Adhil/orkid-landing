@@ -3,6 +3,7 @@ import { Fredoka, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import LoaderComponent from "@/components/loader";
 
 // Import Fredoka for headings
 const fredoka = Fredoka({
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${fredoka.variable} ${poppins.variable}`}>
       <body className="font-sans antialiased">
+        <LoaderComponent />
         <Navbar />
         <main className="min-h-screen pt-20">{children}</main>
         <Footer />
