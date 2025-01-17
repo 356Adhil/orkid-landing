@@ -15,35 +15,23 @@ const LoaderComponent = () => {
   if (!isLoading) return null;
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-r from-blue-100 via-purple-50 to-pink-100 z-50 flex items-center justify-center">
-      <div className="text-center">
-        {/* Bouncing Letters */}
-        <div className="flex items-center justify-center space-x-2 mb-8">
-          {["O", "r", "K", "i", "d"].map((letter, index) => (
-            <span
-              key={index}
-              className="text-4xl font-fredoka font-bold animate-bounce"
-              style={{
-                animationDelay: `${index * 0.1}s`,
-                color: getLetterColor(index),
-              }}
-            >
-              {letter}
-            </span>
-          ))}
-        </div>
-
-        {/* Loading Animation */}
-        <div className="flex items-center justify-center space-x-3">
-          {[0, 1, 2].map((index) => (
-            <div
-              key={index}
-              className="w-4 h-4 rounded-full animate-pulse"
-              style={{
-                backgroundColor: getLoadingDotColor(index),
-                animationDelay: `${index * 0.2}s`,
-              }}
-            />
+    <div className="fixed inset-0 bg-gradient-to-r from-pink-100 via-purple-50 to-blue-100 z-50 flex items-center justify-center">
+      <div className="text-center space-y-6 p-8 rounded-3xl">
+        {/* Bouncy Letters */}
+        <div className="flex items-baseline justify-center">
+          {["O", "r", "k", "i", "d"].map((letter, index) => (
+            <div key={index} className="px-1">
+              <span
+                className={`inline-block text-7xl font-bold tracking-wide animate-letter-bounce`}
+                style={{
+                  color: getColor(index),
+                  animationDelay: `${index * 100}ms`,
+                  transform: `rotate(${index % 2 ? 4 : -4}deg)`,
+                }}
+              >
+                {letter}
+              </span>
+            </div>
           ))}
         </div>
       </div>
@@ -51,20 +39,14 @@ const LoaderComponent = () => {
   );
 };
 
-// Helper functions for colors
-const getLetterColor = (index) => {
+const getColor = (index) => {
   const colors = [
-    "#FF6B6B", // Red
-    "#4ECDC4", // Teal
-    "#FFD93D", // Yellow
+    "#FF6B6B", // Coral
+    "#4ECDC4", // Turquoise
+    "#FFD93D", // Sunny Yellow
     "#6C5CE7", // Purple
     "#FF8F56", // Orange
   ];
-  return colors[index];
-};
-
-const getLoadingDotColor = (index) => {
-  const colors = ["#FF6B6B", "#4ECDC4", "#FFD93D"];
   return colors[index];
 };
 

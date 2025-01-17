@@ -51,24 +51,6 @@
   }
 }
 
-/* Custom utilities */
-@layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
-  }
-}
-
-/* Custom animation for kid-friendly elements */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
 @layer components {
   .container-padded {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
@@ -78,12 +60,8 @@
   .btn {
     @apply font-display rounded-full px-6 py-3 text-center font-semibold 
            transition-all duration-200 transform hover:scale-105 
-           focus:outline-none focus:ring-2 focus:ring-offset-2;
-  }
-
-  /* Fun animation class */
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
+           shadow-lg hover:shadow-xl
+           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent;
   }
 
   /* Card styles for kid-friendly content */
@@ -95,44 +73,33 @@
 
   /* Section titles with playful style */
   .section-title {
-    @apply font-display text-3xl md:text-4xl font-bold text-center 
-           mb-8 text-gradient;
+    @apply font-display text-3xl md:text-4xl font-bold text-center mb-8 text-gradient;
   }
 }
 
 @layer utilities {
+  /* Custom gradient utilities */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+
   .bg-gradient-radial {
     background-image: radial-gradient(var(--tw-gradient-stops));
   }
 
+  /* Hero curve effect */
   .hero-curve {
     filter: drop-shadow(0 -4px 4px rgba(0, 0, 0, 0.1));
     transform: translateY(1px);
   }
 
-  .btn {
-    @apply rounded-full font-display transition-all duration-200 
-           shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 
-           focus:ring-offset-2 focus:ring-offset-transparent;
+  /* Comic font utility */
+  .font-comic {
+    font-family: "Comic Sans MS", cursive, sans-serif;
   }
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-/*  */
-
+/* Animations */
 @keyframes float {
   0%,
   100% {
@@ -142,6 +109,7 @@
     transform: translateY(-10px);
   }
 }
+
 @keyframes gradient-x {
   0% {
     background-position: 0% 50%;
@@ -153,25 +121,7 @@
     background-position: 0% 50%;
   }
 }
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-.animate-float-delayed {
-  animation: float 3s ease-in-out 1s infinite;
-}
-.animate-float-slow {
-  animation: float 4s ease-in-out 2s infinite;
-}
-.animate-gradient-x {
-  background-size: 200% 200%;
-  animation: gradient-x 15s ease infinite;
-}
-.animate-pulse-slow {
-  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-.animate-slideDown {
-  animation: slideDown 0.3s ease-out forwards;
-}
+
 @keyframes slideDown {
   from {
     transform: translateY(-10px);
@@ -182,6 +132,73 @@
     opacity: 1;
   }
 }
-.font-comic {
-  font-family: "Comic Sans MS", cursive, sans-serif;
+
+@keyframes letter-bounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--rotation, -4deg)) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) rotate(var(--rotation, 4deg)) scale(1.05);
+  }
+}
+
+@keyframes ball-bounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1.1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1);
+  }
+}
+
+@keyframes shadow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(0.7);
+    opacity: 0.1;
+  }
+}
+
+/* Animation classes */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 3s ease-in-out 1s infinite;
+}
+
+.animate-float-slow {
+  animation: float 4s ease-in-out 2s infinite;
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 15s ease infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+.animate-letter-bounce {
+  animation: letter-bounce 1s ease-in-out infinite;
+}
+
+.animate-ball-bounce {
+  animation: ball-bounce 0.6s ease-in-out infinite;
+}
+
+.animate-shadow {
+  animation: shadow 0.6s ease-in-out infinite;
 }
