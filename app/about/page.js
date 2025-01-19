@@ -4,11 +4,8 @@ import React from "react";
 import {
   Heart,
   Star,
-  Users,
   Award,
   Lightbulb,
-  GraduationCap,
-  BookOpen,
   Sparkles,
   Rocket,
   SmilePlus,
