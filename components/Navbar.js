@@ -68,10 +68,12 @@ export default function Navbar() {
               ))}
 
               <button className="relative group px-8 py-3 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 text-white font-bold transform hover:scale-110 transition-all duration-300 hover:rotate-2 shadow-lg hover:shadow-xl animate-pulse-slow">
-                <span className="relative z-10 flex items-center space-x-2">
-                  <Star className="w-5 h-5" />
-                  <span>Start Adventure!</span>
-                </span>
+                <Link href="/enroll">
+                  <span className="relative z-10 flex items-center space-x-2">
+                    <Star className="w-5 h-5" />
+                    <span>Start Adventure!</span>
+                  </span>
+                </Link>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
             </div>
@@ -162,9 +164,11 @@ export default function Navbar() {
                           <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-ping opacity-30" />
                           <Star className="h-8 w-8 text-yellow-500 relative z-10" />
                         </div>
-                        <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                          Start Adventure!
-                        </span>
+                        <Link href="/enroll">
+                          <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                            Start Adventure!
+                          </span>
+                        </Link>
                       </div>
 
                       {/* Rainbow Trail */}
