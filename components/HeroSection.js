@@ -19,12 +19,12 @@ const banners = {
   mobile: [
     {
       id: 1,
-      image: "/images/mobile-banner-01.png",
+      image: "/images/Website-banner1.png",
       alt: "Learning Meets Play Banner Mobile",
     },
     {
       id: 2,
-      image: "/images/mobile-banner-02.png",
+      image: "/images/Website-banner2.png",
       alt: "OrKid Edutainment Banner Mobile",
     },
   ],
