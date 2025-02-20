@@ -25,6 +25,9 @@ export const metadata = {
   title: "OrKid Edutainment - Fun Learning for Kids",
   description:
     "Interactive learning platform for kids aged 3-6 years with animated lessons, games, and activities.",
+  icons: {
+    icon: "/Asset.png",
+  },
 };
 
 export default function RootLayout({ children }) {
